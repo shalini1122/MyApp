@@ -2,8 +2,7 @@
   "name": "myapp",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://github.com/shalini1122/MyApp",
-
+  "homepage": "https://shalini1122.github.io/MyApp",
   "dependencies": {
     "@testing-library/dom": "^10.4.0",
     "@testing-library/jest-dom": "^6.6.3",
