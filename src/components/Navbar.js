@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
-import { Link } from 'react-router-dom'; // Import Link
+import { Link } from 'react-router-dom';
+
 const Navbar = () => {
   useEffect(() => {
     const hamburger = document.getElementById("hamburger");
@@ -15,33 +16,30 @@ const Navbar = () => {
     };
 
     hamburger.addEventListener("click", handleClick);
-
-    return () => {
-      hamburger.removeEventListener("click", handleClick); // Cleanup
-    };
+    return () => hamburger.removeEventListener("click", handleClick);
   }, []);
 
   return (
-    <div>
-      <header className="navbar">
-        <div className="logo">
-          <a href="http://localhost:3000/">NFT</a>
-        </div>
+    <header className="navbar">
+      <div className="logo">
+        <Link to="/">
+          <h2>Logo</h2>
+        </Link>
+      </div>
 
-        <div className="hamburger" id="hamburger">
-          <i className="fas fa-bars" id="menuIcon"></i>
-          <i className="fas fa-times" id="closeIcon" style={{ display: "none" }}></i>
-        </div>
+      <div className="hamburger" id="hamburger">
+        <i className="fas fa-bars" id="menuIcon"></i>
+        <i className="fas fa-times" id="closeIcon" style={{ display: "none" }}></i>
+      </div>
 
-        <nav className="navbar-links" id="navLinks">
-         <Link to="/character">Character</Link>
-         <Link to="/collection">Collections</Link>
-         <Link to="/roadmap">Roadmap</Link>
-         <Link to="/cryptoPrices">CryptoPrices</Link>
-          <a href="#start" className="btn">View on Opensea</a>
-        </nav>
-      </header>
-    </div>
+      <nav className="navbar-links" id="navLinks">
+        <Link to="/character">Character</Link>
+        <Link to="/collection">Collections</Link>
+        <Link to="/roadmap">Roadmap</Link>
+        <Link to="/cryptoPrices">CryptoPrices</Link>
+        <a href="#start" className="btn">View on Opensea</a>
+      </nav>
+    </header>
   );
 };
 

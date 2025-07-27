@@ -1,45 +1,22 @@
-import React from 'react'
+import React from 'react';
 
-export const Collections = () => {
+const Collections = () => {
   return (
-    <div><section className="collections">
-                <div className="card">
-                   <img src="assets/images/card_img.png" alt=""/>
-                    <div className="content">
-                        <h3>Character3</h3>
-                        <p>Lorem </p>
-                    </div>
-                </div>
-                <div className="card">
-                  <img src="assets/images/card_img.png" alt=""/>
-                    <div className="content">
-                        <h3>Character3</h3>
-                        <p>Lorem </p>
-                    </div>
-                </div>
-                <div className="card">
-                   <img src="assets/images/card_img.png" alt=""/>
-                    <div className="content">
-                        <h3>Character3</h3>
-                        <p>Lorem </p>
-                    </div>
+    <section className="collections">
+      {[...Array(5)].map((_, index) => (
+        <div className="card" key={index}>
+          <img
+            src={process.env.PUBLIC_URL + '/assets/images/card_img.png'}
+            alt={`Character ${index + 1}`}
+          />
+          <div className="content">
+            <h3>Character {index + 1}</h3>
+            <p>Lorem</p>
+          </div>
+        </div>
+      ))}
+    </section>
+  );
+};
 
-                </div>
-                <div className="card">
-                   <img src="assets/images/card_img.png" alt=""/>
-                    <div className="content">
-                        <h3>Character3</h3>
-                        <p>Lorem </p>
-                    </div>
-                </div>
-                <div className="card">
-                <img src="assets/images/card_img.png" alt=""/>
-                    <div className="content">
-                        <h3>Character3</h3>
-                        <p>Lorem </p>
-                    </div>
-                </div>
-            </section></div>
-  )
-}
 export default Collections;
